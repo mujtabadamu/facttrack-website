@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FactTrack — Real-time fact-checking for any video</title>
+  <meta name="description" content="FactTrack is a Chrome extension that checks factual claims in video captions against live web sources, in real time, with cited verdicts right in the side panel." />
+  <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a href="/" class="brand"><img src="icon.png" alt="" />FactTrack</a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Know if it's true, while it's still playing.</h1>
+      <p class="lede">
+        FactTrack watches the captions on any video — YouTube, news sites,
+        anywhere a video has captions — and checks factual claims against live
+        web sources in real time, right in a side panel next to the video.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#how-it-works">See how it works</a>
+        <a class="btn btn-secondary" href="privacy.html">Privacy policy</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="how-it-works">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="section-lede">No transcription, no waiting for someone else to fact-check it later. It rides along with what you're already watching.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Reads existing captions</h3>
+          <p>A content script reads the video's caption track directly — captions must be turned on, nothing is transcribed from audio.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Extracts checkable claims</h3>
+          <p>Rolling transcript windows are sent to a small proxy server, which asks an AI model to pull out discrete, checkable claims — statistics, quotes, historical references, current events.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Verifies against live sources</h3>
+          <p>Each claim is checked against live web search and returned with a verdict and cited sources — never guessed from memory alone.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Streams into the side panel</h3>
+          <p>Claims appear the moment they're spoken; verdicts follow a few seconds later, right next to the video you're watching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="verdicts">
+    <div class="wrap">
+      <h2>Every claim gets one of four verdicts</h2>
+      <p class="section-lede">No vague "true or false" — and it's tuned to default toward uncertainty rather than risk wrongly calling something false.</p>
+      <div class="verdicts">
+        <div class="verdict-card verdict-accurate">
+          <div class="label">✅ Accurate</div>
+          <p>Matches credible cited sources, no material omission.</p>
+        </div>
+        <div class="verdict-card verdict-context">
+          <div class="label">⚠️ Missing Context</div>
+          <p>Technically true, but omits something that changes the meaning.</p>
+        </div>
+        <div class="verdict-card verdict-false">
+          <div class="label">❌ False</div>
+          <p>A credible, cited source directly contradicts the claim.</p>
+        </div>
+        <div class="verdict-card verdict-unverifiable">
+          <div class="label">ℹ️ Unverifiable</div>
+          <p>Not enough evidence to confirm or deny, or credible sources disagree.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Access tiers</h2>
+      <p class="section-lede">Cap values are live-adjustable — no need to reinstall to get more checks.</p>
+      <table class="tiers">
+        <thead>
+          <tr><th>Tier</th><th>Limit</th><th>Unlocked by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Anonymous</td><td>10 checks, once</td><td>Default — no sign-in needed</td></tr>
+          <tr><td>Free account</td><td>100 checks, lifetime</td><td>Sign in with Google</td></tr>
+          <tr><td>Subscriber</td><td>1,000 checks / month</td><td>Subscribe via Paystack</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span id="year-copy">© FactTrack</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="mailto:mujtabadamu@gmail.com">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
